@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,134 +13,193 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a; /* Deep black */
-            color: #e5e5e5; /* Soft white */
-            line-height: 1.5;
-            padding: 32px;
+            background: #050505;
+            color: #d9d9d9;
+            line-height: 1.6;
+            padding: 40px;
+            overflow-x: hidden;
+            background: radial-gradient(circle at top left, rgba(20, 20, 30, 0.9), #050505);
         }
         .container {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: #141414; /* Dark gray */
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #27272a; /* Subtle border */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            background: #0f0f0f;
+            padding: 48px;
+            border-radius: 16px;
+            border: 1px solid #1e1e22;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         h1 {
-            font-size: 2.25rem;
-            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem; /* Slightly smaller to fit */
+            font-weight: 500;
             color: #ffffff;
             text-align: center;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            position: relative;
+            text-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+            white-space: nowrap; /* Keeps name on one line */
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
         .contact {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             font-size: 1rem;
-            color: #a1a1aa; /* Muted zinc */
+            color: #8b8b93;
         }
         .contact a {
-            color: #60a5fa; /* Soft blue */
+            color: #60a5fa;
             text-decoration: none;
-            margin: 0 12px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            transition: background 0.2s ease, color 0.2s ease;
+            margin: 0 16px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
         .contact a:hover {
-            background: #27272a; /* Zinc hover */
+            background: #1e1e22;
             color: #93c5fd;
+            transform: scale(1.05);
         }
         h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 500;
             color: #ffffff;
-            margin: 32px 0 16px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #3f3f46; /* Subtle zinc */
+            margin: 40px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3b82f6;
+            position: relative;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #60a5fa;
+            transition: width 0.3s ease;
+        }
+        h2:hover::after {
+            width: 100px;
         }
         .job {
-            background: #1f1f1f; /* Slightly lighter card */
-            padding: 24px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #27272a;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #171717;
+            padding: 28px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            border: 1px solid #1e1e22;
+            transition: all 0.3s ease;
         }
         .job:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(96, 165, 250, 0.2);
         }
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 12px;
         }
         .job-title {
             font-weight: 600;
-            font-size: 1.125rem;
-            color: #e5e5e5;
+            font-size: 1.2rem;
+            color: #e0e0e0;
         }
         .job-date {
-            font-size: 0.875rem;
-            color: #a1a1aa;
+            font-size: 0.9rem;
+            color: #8b8b93;
         }
         .job-company {
             font-weight: 500;
             color: #60a5fa;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .job-location {
             font-size: 0.875rem;
-            color: #71717a; /* Darker zinc */
-            margin-bottom: 12px;
+            color: #66666e;
+            margin-bottom: 16px;
         }
         ul {
-            padding-left: 16px;
+            padding-left: 20px;
             list-style: none;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
-            padding-left: 20px;
-            color: #d4d4d8; /* Soft gray */
+            padding-left: 24px;
+            color: #c7c7cc;
         }
         li::before {
-            content: '→';
+            content: '▹';
             position: absolute;
             left: 0;
-            color: #60a5fa;
-            font-size: 1rem;
+            color: #3b82f6;
+            font-size: 1.1rem;
         }
         .skills {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 16px 32px;
-            padding: 20px;
-            background: #1f1f1f;
-            border-radius: 8px;
-            border: 1px solid #27272a;
-            margin-top: 16px;
+            grid-template-columns: 150px 1fr;
+            gap: 12px 24px;
+            padding: 24px;
+            background: #171717;
+            border-radius: 12px;
+            border: 1px solid #1e1e22;
+            margin-top: 20px;
         }
         .skill-category {
             font-weight: 600;
             color: #60a5fa;
         }
         .skill-items {
-            color: #d4d4d8;
+            color: #c7c7cc;
         }
         strong {
-            color: #93c5fd; /* Brighter blue */
+            color: #93c5fd;
             font-weight: 600;
         }
         em {
-            color: #a1a1aa;
+            color: #8b8b93;
             font-style: italic;
+        }
+        .sidebar {
+            text-align: center;
+            padding: 20px 0;
+            max-width: 300px; /* Ensures enough room for name */
+        }
+        @media (min-width: 1200px) {
+            .sidebar {
+                position: fixed;
+                top: 40px;
+                left: 40px;
+                width: 300px; /* Wider to accommodate name */
+            }
+            .main-content {
+                margin-left: 340px; /* Adjusted for wider sidebar */
+            }
         }
         @media print {
             body {
@@ -154,8 +213,20 @@
                 box-shadow: none;
                 padding: 20px;
             }
+            .sidebar {
+                position: static;
+                width: auto;
+                padding: 20px 0;
+            }
             h1, h2, .skill-category, strong {
                 color: #000;
+                background: none;
+                -webkit-background-clip: initial;
+                background-clip: initial;
+                text-shadow: none;
+            }
+            h1::after, h2::after {
+                display: none;
             }
             .contact a {
                 color: #000;
@@ -177,17 +248,21 @@
             li::before {
                 color: #000;
             }
+            .main-content {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DHEERAJ C K</h1>
+    <div class="sidebar">
+        <h1 style="font-family: 'Montserrat', sans-serif;">DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com">dheerajck18@gmail.com</a> |
+            <a href="mailto:dheerajck18@gmail.com">dheerajck18@gmail.com</a><br>
             <a href="https://github.com/dheerajck">github.com/dheerajck</a>
         </div>
-
+    </div>
+    <div class="container main-content">
         <h2>Experience</h2>
 
         <div class="job">
@@ -196,14 +271,14 @@
                 <div class="job-date">Feb 2023 - Present</div>
             </div>
             <div class="job-company">Ping Data Intelligence</div>
-            <div class="job-location">Remote</div>
+            <div class="job-location">Remote - USA</div>
             <ul>
                 <li>Integrated <strong>30+</strong> API endpoints for a seamless Ping API ecosystem, prioritizing developer usability.</li>
                 <li>Designed PostgreSQL databases for geospatial data (FEMA flood zones, National Risk Index), optimizing for intuitive querying and visualization.</li>
                 <li>Revamped CI/CD pipelines, accelerating workflows by <strong>400%</strong> with a focus on developer experience.</li>
-                <li>Boosted text search performance by <strong>10-25x</strong> with trigram indexes, enhancing user query responsiveness.</li>
-                <li>Redesigned async workers for a <strong>125%</strong> speed boost, improving task flow efficiency.</li>
-                <li>Built a Tiger Geocoder instance for US address mapping, streamlining location-based UX.</li>
+                <li>Accelerated text search performance by <strong>10-25x</strong> with trigram indexes, enhancing user query responsiveness.</li>
+                <li>Eliminated bottlenecks in async workers by converting synchronous tasks to asynchronous, achieving a <strong>125%</strong> task execution speedup.</li>
+                <li>Implemented a TIGER Geocoder instance for US address mapping and integrated it with third-party geocoders like Google and Azure to improve geocoding confidence and accuracy.</li>
             </ul>
         </div>
 
@@ -213,10 +288,10 @@
                 <div class="job-date">April 2022 - Present</div>
             </div>
             <div class="job-company">Self-employed</div>
-            <div class="job-location">Remote</div>
+            <div class="job-location">Remote - Global</div>
             <ul>
-                <li>Optimized PostgreSQL workflows for 10M+ records, delivering a <strong>1.52x</strong> speedup with user-friendly data access.</li>
-                <li>Enhanced CI/CD pipelines for selective testing, improving usability and reducing friction for developers.</li>
+                <li>Implemented batch processing workflows using PostgreSQL control structures and optimized queries for memory-efficient retrieval of 10M+ records, delivering a speedup of <strong>1.52x</strong> for large-scale data processing over existing workflows.</li>
+                <li>Accelerated CI/CD pipelines by selectively running unit test suites based on code changes, resulting in significant improvements to developer experience and cost savings.</li>
                 <li>Developed Django REST API web apps with a focus on scalable, intuitive interfaces.</li>
                 <li>Engineered Python web scrapers for efficient, user-centric data delivery.</li>
                 <li>Designed resource allocation algorithms, balancing efficiency with practical usability.</li>
@@ -230,11 +305,11 @@
                 <div class="job-date">September 2021 - March 2022</div>
             </div>
             <div class="job-company">Qburst</div>
-            <div class="job-location">Kerala, India</div>
+            <div class="job-location">Onsite - Kerala, India</div>
             <ul>
                 <li>Built a TCP Client/Server system for real-time device monitoring, ensuring clear data presentation.</li>
                 <li>Designed a real-time Django-WebSocket dashboard, delivering an intuitive UI for network metrics.</li>
-                <li>Developed an intelligent document analyzer with inline feedback, enhancing resume review UX.</li>
+                <li>Developed an intelligent document analyzer with inline comments, providing real-time grammar and spelling feedback to enhance resume review UX.</li>
             </ul>
         </div>
 
@@ -245,7 +320,7 @@
                 <div class="job-title">Real Estate Trend Analyzer - Funda Trends | <em>Python, BeautifulSoup, PostgreSQL</em></div>
             </div>
             <ul>
-                <li>Scraped <strong>1M+ listings</strong> from funda.nl with anti-blocking techniques, enabling a smooth analytics UX.</li>
+                <li>Scraped <strong>1M+ listings</strong> from funda.nl with anti-blocking techniques, enabling smooth data-driven insights.</li>
                 <li>Integrated data into a real-time SaaS pipeline, empowering users with actionable price trend insights.</li>
             </ul>
         </div>
@@ -286,12 +361,12 @@
             <div class="skill-items">Python, C, Cython, Golang</div>
             <div class="skill-category">Frameworks:</div>
             <div class="skill-items">Django, Flask, FastAPI</div>
+            <div class="skill-category">Libraries:</div>
+            <div class="skill-items">NumPy, Pandas, GeoPandas, Polars</div>
             <div class="skill-category">Databases:</div>
             <div class="skill-items">PostgreSQL, MongoDB</div>
-            <div class="skill-category">Design Tools:</div>
-            <div class="skill-items">Figma, Adobe XD, CSS (for UI prototyping)</div>
             <div class="skill-category">Interests:</div>
-            <div class="skill-items">Gaming, Problem Solving, UI/UX Design, Beaches</div>
+            <div class="skill-items">Gaming, Problem solving(seriously), Beaches, Fishing</div>
         </div>
     </div>
 </body>
