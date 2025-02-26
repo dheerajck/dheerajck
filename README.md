@@ -14,3 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+You can view my resume directly at: https://dheerajck.github.io/dheerajck/
+
+Feel free to reach out to me at dheerajck18@gmail.com or connect with me on GitHub [@dheerajck](https://github.com/dheerajck).
