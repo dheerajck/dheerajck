@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,143 +13,133 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.6;
-            padding: 40px;
+            background: #0a0a0a; /* Deep black */
+            color: #e5e5e5; /* Soft white */
+            line-height: 1.5;
+            padding: 32px;
         }
         .container {
-            max-width: 1000px;
+            max-width: 960px;
             margin: 0 auto;
-            background: #2a2a2a;
+            background: #141414; /* Dark gray */
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, #00ddeb, #ff007a);
+            border-radius: 12px;
+            border: 1px solid #27272a; /* Subtle border */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
         h1 {
-            font-size: 2.8em;
+            font-size: 2.25rem;
             font-weight: 700;
-            color: #00ddeb;
+            color: #ffffff;
             text-align: center;
-            margin-bottom: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
         .contact {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.1em;
-            color: #a0a0a0;
+            margin-bottom: 32px;
+            font-size: 1rem;
+            color: #a1a1aa; /* Muted zinc */
         }
         .contact a {
-            color: #ff007a;
+            color: #60a5fa; /* Soft blue */
             text-decoration: none;
-            margin: 0 15px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
+            margin: 0 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: background 0.2s ease, color 0.2s ease;
         }
         .contact a:hover {
-            background: rgba(255, 0, 122, 0.1);
-            color: #fff;
+            background: #27272a; /* Zinc hover */
+            color: #93c5fd;
         }
         h2 {
-            font-size: 1.8em;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #00ddeb;
-            margin: 40px 0 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #ff007a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: #ffffff;
+            margin: 32px 0 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #3f3f46; /* Subtle zinc */
         }
         .job {
-            background: #333333;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 12px;
+            background: #1f1f1f; /* Slightly lighter card */
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #27272a;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .job:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .job-title {
             font-weight: 600;
-            font-size: 1.3em;
-            color: #e0e0e0;
+            font-size: 1.125rem;
+            color: #e5e5e5;
         }
         .job-date {
-            font-size: 0.95em;
-            color: #a0a0a0;
-            font-style: italic;
+            font-size: 0.875rem;
+            color: #a1a1aa;
         }
         .job-company {
-            font-weight: 600;
-            color: #ff007a;
-            margin-bottom: 5px;
+            font-weight: 500;
+            color: #60a5fa;
+            margin-bottom: 4px;
         }
         .job-location {
-            font-size: 0.9em;
-            color: #808080;
-            margin-bottom: 10px;
+            font-size: 0.875rem;
+            color: #71717a; /* Darker zinc */
+            margin-bottom: 12px;
         }
         ul {
-            padding-left: 20px;
+            padding-left: 16px;
             list-style: none;
         }
         li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             position: relative;
             padding-left: 20px;
+            color: #d4d4d8; /* Soft gray */
         }
         li::before {
-            content: '▹';
+            content: '→';
             position: absolute;
             left: 0;
-            color: #00ddeb;
-            font-size: 1.2em;
+            color: #60a5fa;
+            font-size: 1rem;
         }
         .skills {
             display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 20px 40px;
+            grid-template-columns: 140px 1fr;
+            gap: 16px 32px;
             padding: 20px;
-            background: #333333;
-            border-radius: 12px;
-            margin-top: 20px;
+            background: #1f1f1f;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            margin-top: 16px;
         }
         .skill-category {
             font-weight: 600;
-            color: #ff007a;
-            text-transform: uppercase;
+            color: #60a5fa;
         }
         .skill-items {
-            color: #e0e0e0;
+            color: #d4d4d8;
         }
         strong {
-            color: #00ddeb;
+            color: #93c5fd; /* Brighter blue */
             font-weight: 600;
         }
         em {
-            color: #a0a0a0;
+            color: #a1a1aa;
             font-style: italic;
         }
         @media print {
@@ -160,12 +150,9 @@
             }
             .container {
                 background: #fff;
+                border: none;
                 box-shadow: none;
                 padding: 20px;
-                border-radius: 0;
-            }
-            .container::before {
-                display: none;
             }
             h1, h2, .skill-category, strong {
                 color: #000;
@@ -176,6 +163,7 @@
             }
             .job {
                 background: none;
+                border: none;
                 transform: none;
                 box-shadow: none;
             }
@@ -184,6 +172,7 @@
             }
             .skills {
                 background: none;
+                border: none;
             }
             li::before {
                 color: #000;
