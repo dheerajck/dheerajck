@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHEERAJ C K - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact a {
+            color: #0366d6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        .job {
+            margin-bottom: 25px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        .job-date {
+            font-style: italic;
+        }
+        .job-company {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .job-location {
+            font-style: italic;
+            color: #666;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 5px;
+        }
+        .skill-category {
+            font-weight: bold;
+            text-align: right;
+        }
+        .skill-items {
+            margin: 0;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DHEERAJ C K</h1>
+        <div class="contact">
+            <a href="mailto:dheerajck18@gmail.com">dheerajck18@gmail.com</a> |
+            <a href="https://github.com/dheerajck">github.com/dheerajck</a>
+        </div>
+
+        <h2>Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Software Engineer</div>
+                <div class="job-date">Feb 2023 - Present</div>
+            </div>
+            <div class="job-company">Ping Data Intelligence</div>
+            <div class="job-location">Remote</div>
+            <ul>
+                <li>Integrated <strong>30+</strong> api endpoints to ping api of apis endpoint.</li>
+                <li>Architected PostgreSQL databases for geospatial datasets (FEMA flood zones, National Risk Index, fire stations), ensuring efficient storage and spatial indexing.</li>
+                <li>Accelerated CI/CD pipelines by <strong>400%</strong> through parallelized testing (pytest) and caching, enabling faster deployment cycles and a better developer experience.</li>
+                <li>Achieved a remarkable <strong>10-25x</strong> acceleration in text search performance by leveraging trigram indexes, significantly reducing query latency on a 10M+ record database.</li>
+                <li>Identified and addressed performance bottlenecks within an async worker/codebase by identifying synchronous tasks and replacing them with asynchronous tasks, resulting in a <strong>125%</strong> speedup in task execution time.</li>
+                <li>Created an independent Tiger Geocoder instance to geocode US addresses.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Freelancing</div>
+                <div class="job-date">April 2022 - Present</div>
+            </div>
+            <div class="job-company">Self-employed</div>
+            <div class="job-location">Remote</div>
+            <ul>
+                <li>Implemented batch processing workflows using PostgreSQL control structures and optimized queries for memory-efficient retrieval of 10M+ records, providing execution speedup of <strong>1.52x</strong> for large-scale data processing.</li>
+                <li>Accelerated CI/CD pipelines by selectively running unit test suites based on code changes, resulting in significant improvements to developer experience and cost savings.</li>
+                <li>Engineered web applications with Django REST APIs, delivering scalable and efficient solutions.</li>
+                <li>Developed high-performance web scrapers using Python to extract and process large-scale datasets.</li>
+                <li>Implemented optimization algorithms for resource allocation challenges, utilizing dynamic programming and constraint satisfaction techniques to maximize efficiency.</li>
+                <li>Built automated Telegram bots with Python integrating third-party APIs, enabling streamlined business processes and enhanced user engagement.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Software Engineer</div>
+                <div class="job-date">September 2021 - March 2022</div>
+            </div>
+            <div class="job-company">Qburst</div>
+            <div class="job-location">Kerala, India</div>
+            <ul>
+                <li>Created a TCP Client/Server system for real-time device monitoring, enabling seamless tracking and visualization of network metrics across enterprise infrastructure.</li>
+                <li>Developed a real-time monitoring dashboard using Django and WebSockets, enabling live visualization and analysis of network device metrics through an intuitive web interface.</li>
+                <li>Designed and implemented an intelligent document analyzer that automatically detects grammatical and spelling errors in resumes, featuring in-line comment generation for efficient document review.</li>
+            </ul>
+        </div>
+
+        <h2>Projects</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Real Estate Trend Analyzer - Funda Trends | <em>Python, BeautifulSoup, PostgreSQL</em></div>
+            </div>
+            <ul>
+                <li>Successfully scraped over <strong>1M property listings</strong> from funda.nl using anti-blocking techniques, including IP rotation, randomized delays, and proxy management, while automating data storage in PostgreSQL for efficient querying.</li>
+                <li>Enabled real-time price trend analysis for a SaaS product by integrating the scraped data into a dynamic analytics pipeline, facilitating timely insights and reducing manual data collection efforts.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Low-Level Web Application | <em>Python, WSGI, REST API, PostgreSQL</em></div>
+            </div>
+            <ul>
+                <li>Developed a framework-agnostic mailing service backend handling <strong>500+ concurrent requests</strong> using pure Python/WSGI for learning.</li>
+                <li>Added separate REST APIs using Web Server Gateway Interface(WSGI).</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Inventory Optimization Algorithm | <em>Python, Cython, Numpy</em></div>
+            </div>
+            <ul>
+                <li>Architected a Knapsack-based algorithm to optimize order grouping, which saved hours of manual work of large scale resellers.</li>
+                <li>Further boosted runtime performance by 6x and reduced memory usage by reimplementing the algorithm in Cython, enabling seamless scalability and real-time processing in high-demand environments.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div class="job-title">Multilingual Video Subtitle Generator | <em>OpenAI Whisper, Silero VAD, EasyNMT</em></div>
+            </div>
+            <ul>
+                <li>Deployed a video processing tool generating subtitles in <strong>20+ languages</strong>, cutting manual transcription costs by <strong>70%</strong> using Whisper and EasyNMT.</li>
+                <li>Improved transcription accuracy by <strong>25%</strong> via Silero VAD to segment audio by voice activity, minimizing errors in 2hr+ videos.</li>
+            </ul>
+        </div>
+
+        <h2>Technical Skills and Interests</h2>
+        <div class="skills">
+            <div class="skill-category">Languages:</div>
+            <div class="skill-items">Python, C, Cython, Golang</div>
+
+            <div class="skill-category">Frameworks:</div>
+            <div class="skill-items">Django, Flask, FastAPI</div>
+
+            <div class="skill-category">Databases:</div>
+            <div class="skill-items">PostgreSQL, MongoDB</div>
+
+            <div class="skill-category">Interests:</div>
+            <div class="skill-items">Gaming, Problem solving (seriously), Going to beaches, Fishing</div>
+        </div>
+    </div>
+</body>
+</html>
