@@ -252,6 +252,61 @@
                 margin-left: 0;
             }
         }
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 24px;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                max-width: none;
+                padding: 10px 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact a {
+                margin: 0 5px;
+                padding: 4px 8px;
+                display: inline-block;
+                margin-bottom: 8px;
+            }
+
+            .job {
+                padding: 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+                padding: 16px;
+            }
+
+            .job-title {
+                margin-bottom: 8px;
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
