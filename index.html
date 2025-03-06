@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -13,22 +14,20 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #050505;
-            color: #d9d9d9;
-            line-height: 1.6;
-            padding: 40px;
-            overflow-x: hidden;
             background: radial-gradient(circle at top left, rgba(20, 20, 30, 0.9), #050505);
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             background: #0f0f0f;
-            padding: 48px;
+            padding: 40px;
             border-radius: 16px;
             border: 1px solid #1e1e22;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            position: relative;
             animation: fadeIn 0.6s ease-in-out;
         }
         @keyframes fadeIn {
@@ -37,168 +36,189 @@
         }
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem; /* Slightly smaller to fit */
+            font-size: 2.2rem;
             font-weight: 500;
             color: #ffffff;
             text-align: center;
-            margin-bottom: 16px;
-            position: relative;
-            text-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
-            white-space: nowrap; /* Keeps name on one line */
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
         }
         h1::after {
             content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            width: 60px;
-            height: 2px;
+            display: block;
+            width: 80px;
+            height: 3px;
             background: linear-gradient(90deg, #3b82f6, #60a5fa);
-            transform: translateX(-50%);
+            margin: 10px auto;
             border-radius: 2px;
         }
         .contact {
             text-align: center;
             margin-bottom: 40px;
-            font-size: 1rem;
-            color: #8b8b93;
+            font-size: 1.1rem;
+            color: #a0a0a0;
         }
         .contact a {
             color: #60a5fa;
             text-decoration: none;
-            margin: 0 16px;
-            padding: 6px 12px;
+            margin: 0 15px;
+            padding: 8px 16px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .contact a:hover {
             background: #1e1e22;
             color: #93c5fd;
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
         h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 500;
             color: #ffffff;
-            margin: 40px 0 20px;
-            padding-bottom: 8px;
+            margin: 50px 0 25px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #3b82f6;
-            position: relative;
             background: linear-gradient(90deg, #3b82f6, #60a5fa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #60a5fa;
-            transition: width 0.3s ease;
-        }
-        h2:hover::after {
-            width: 100px;
-        }
         .job {
             background: #171717;
-            padding: 28px;
-            margin-bottom: 24px;
+            padding: 30px;
+            margin-bottom: 30px;
             border-radius: 12px;
             border: 1px solid #1e1e22;
             transition: all 0.3s ease;
         }
         .job:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(96, 165, 250, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(96, 165, 250, 0.3);
         }
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 12px;
+            margin-bottom: 20px;
+            gap: 15px;
         }
         .job-title {
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #e0e0e0;
         }
         .job-date {
-            font-size: 0.9rem;
-            color: #8b8b93;
+            font-size: 1rem;
+            color: #a0a0a0;
         }
         .job-company {
             font-weight: 500;
             color: #60a5fa;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         .job-location {
-            font-size: 0.875rem;
-            color: #66666e;
-            margin-bottom: 16px;
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 20px;
         }
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
             list-style: none;
         }
         li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             position: relative;
-            padding-left: 24px;
-            color: #c7c7cc;
+            padding-left: 25px;
+            color: #d0d0d0;
         }
         li::before {
             content: '▹';
             position: absolute;
             left: 0;
             color: #3b82f6;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         .skills {
             display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 12px 24px;
-            padding: 24px;
+            grid-template-columns: 160px 1fr;
+            gap: 15px 30px;
+            padding: 25px;
             background: #171717;
             border-radius: 12px;
             border: 1px solid #1e1e22;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         .skill-category {
             font-weight: 600;
             color: #60a5fa;
         }
         .skill-items {
-            color: #c7c7cc;
+            color: #d0d0d0;
         }
         strong {
             color: #93c5fd;
             font-weight: 600;
         }
         em {
-            color: #8b8b93;
+            color: #a0a0a0;
             font-style: italic;
         }
         .sidebar {
             text-align: center;
             padding: 20px 0;
-            max-width: 300px; /* Ensures enough room for name */
+            max-width: 320px;
         }
         @media (min-width: 1200px) {
             .sidebar {
                 position: fixed;
                 top: 40px;
                 left: 40px;
-                width: 300px; /* Wider to accommodate name */
+                width: 320px;
             }
             .main-content {
-                margin-left: 340px; /* Adjusted for wider sidebar */
+                margin-left: 360px;
+            }
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 25px;
+            }
+            .sidebar {
+                position: static;
+                width: 100%;
+                padding: 15px 0;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .contact a {
+                margin: 5px;
+                padding: 6px 12px;
+            }
+            .job {
+                padding: 20px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 20px;
             }
         }
         @media print {
@@ -207,114 +227,32 @@
                 color: #000;
                 padding: 0;
             }
-            .container {
-                background: #fff;
+            .container, .job, .skills {
+                background: none;
                 border: none;
                 box-shadow: none;
-                padding: 20px;
             }
-            .sidebar {
-                position: static;
-                width: auto;
-                padding: 20px 0;
-            }
-            h1, h2, .skill-category, strong {
+            h1, h2, .skill-category, strong, .job-company {
                 color: #000;
                 background: none;
                 -webkit-background-clip: initial;
                 background-clip: initial;
-                text-shadow: none;
-            }
-            h1::after, h2::after {
-                display: none;
             }
             .contact a {
                 color: #000;
-                background: none;
-            }
-            .job {
-                background: none;
-                border: none;
-                transform: none;
-                box-shadow: none;
-            }
-            .job-company, .contact a:hover {
-                color: #000;
-            }
-            .skills {
-                background: none;
-                border: none;
             }
             li::before {
                 color: #000;
-            }
-            .main-content {
-                margin-left: 0;
-            }
-        }
-        /* Mobile responsive styles */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-
-            .container {
-                padding: 24px;
-            }
-
-            .sidebar {
-                position: static;
-                width: 100%;
-                max-width: none;
-                padding: 10px 0;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            .contact a {
-                margin: 0 5px;
-                padding: 4px 8px;
-                display: inline-block;
-                margin-bottom: 8px;
-            }
-
-            .job {
-                padding: 20px;
-            }
-
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-                padding: 16px;
-            }
-
-            .job-title {
-                margin-bottom: 8px;
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <h1 style="font-family: 'Montserrat', sans-serif;">DHEERAJ C K</h1>
+        <h1>DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com">dheerajck18@gmail.com</a><br>
-            <a href="https://github.com/dheerajck">github.com/dheerajck</a>
+            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a><br>
+            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i>github.com/dheerajck</a>
         </div>
     </div>
     <div class="container main-content">
