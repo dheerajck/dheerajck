@@ -127,6 +127,61 @@
             color: #8b949e;
             font-style: italic;
         }
+        /* Easter Egg Styles */
+        .konami-code {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #30363d;
+            cursor: help;
+        }
+        .easter-egg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #58a6ff;
+            text-align: center;
+            animation: matrix 2s linear infinite;
+        }
+        .easter-egg h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .easter-egg p {
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+        .easter-egg button {
+            background: #58a6ff;
+            color: #0d1117;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Fira Code', monospace;
+            margin-top: 20px;
+        }
+        .terminal-text {
+            font-family: 'Fira Code', monospace;
+            color: #4ff742;
+            text-shadow: 0 0 5px #4ff742;
+            margin: 20px 0;
+            max-width: 600px;
+            text-align: left;
+        }
+        @keyframes matrix {
+            0%, 100% { text-shadow: 0 0 10px #58a6ff; }
+            50% { text-shadow: 0 0 20px #58a6ff; }
+        }
         @media (max-width: 600px) {
             .container {
                 padding: 15px;
@@ -261,5 +316,58 @@
             <div class="skill-items">Gaming, Problem solving(seriously), Beaches, Fishing</div>
         </div>
     </div>
+
+    <!-- Easter Egg -->
+    <div class="konami-code">↑↑↓↓←→←→BA</div>
+    <div class="easter-egg">
+        <h3>You Found The Secret Developer Mode!</h3>
+        <div class="terminal-text">
+            $ whoami<br>
+            dheerajck<br>
+            $ cat secret_skills.txt<br>
+            - Lets add something here
+            - Too lazy to add now
+            - Maybe something fun<br>
+            - What about I can compile any code with pure willpower when servers are down<br>
+            - Also Has a neural network trained on fishing patterns that predicts optimal database indices GPT suggestions
+        </div>
+        <p>Btw why am I starting with btw idk anyway Actually neural network to predict fish movement or catching fish seems something lol!</p>
+        <button onclick="closeEasterEgg()">Back to Resume</button>
+    </div>
+
+    <!-- Easter Egg Script -->
+    <script>
+        // Konami Code Sequence
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        // Listen for Konami Code
+        document.addEventListener('keydown', function(e) {
+            const key = e.key;
+            const requiredKey = konamiCode[konamiIndex];
+
+            if (key.toLowerCase() === requiredKey.toLowerCase()) {
+                konamiIndex++;
+
+                if (konamiIndex === konamiCode.length) {
+                    activateEasterEgg();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Also activate when clicking the hint text
+        document.querySelector('.konami-code').addEventListener('click', activateEasterEgg);
+
+        function activateEasterEgg() {
+            document.querySelector('.easter-egg').style.display = 'flex';
+        }
+
+        function closeEasterEgg() {
+            document.querySelector('.easter-egg').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
