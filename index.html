@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
@@ -13,249 +13,148 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at top left, rgba(20, 20, 30, 0.9), #050505);
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: 'Fira Code', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.5;
             padding: 20px;
-            overflow-x: hidden;
         }
         .container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-            background: #0f0f0f;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid #1e1e22;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.6s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding: 20px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
         }
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 500;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+            font-size: 1.8rem;
+            color: #58a6ff;
+            text-align: left;
+            margin-bottom: 10px;
         }
-        h1::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #60a5fa);
-            margin: 10px auto;
-            border-radius: 2px;
+        h1::before {
+            content: "$ ";
+            color: #8b949e;
         }
         .contact {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            color: #a0a0a0;
+            font-size: 0.95rem;
+            color: #8b949e;
+            margin-bottom: 20px;
         }
         .contact a {
-            color: #60a5fa;
+            color: #58a6ff;
             text-decoration: none;
-            margin: 0 15px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            margin-right: 15px;
         }
         .contact a:hover {
-            background: #1e1e22;
-            color: #93c5fd;
-            transform: translateY(-2px);
+            text-decoration: underline;
         }
         h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #ffffff;
-            margin: 50px 0 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #3b82f6;
-            background: linear-gradient(90deg, #3b82f6, #60a5fa);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 1.3rem;
+            color: #58a6ff;
+            margin: 30px 0 15px;
+            border-bottom: 1px dashed #30363d;
+        }
+        h2::before {
+            content: ">>> ";
+            color: #8b949e;
         }
         .job {
-            background: #171717;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            border: 1px solid #1e1e22;
-            transition: all 0.3s ease;
-        }
-        .job:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(96, 165, 250, 0.3);
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 4px;
         }
         .job-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            gap: 15px;
+            font-size: 1.1rem;
+            color: #c9d1d9;
+            margin-bottom: 10px;
         }
         .job-title {
-            font-weight: 600;
-            font-size: 1.3rem;
-            color: #e0e0e0;
+            font-weight: 500;
         }
         .job-date {
-            font-size: 1rem;
-            color: #a0a0a0;
+            color: #8b949e;
         }
         .job-company {
-            font-weight: 500;
-            color: #60a5fa;
-            margin-bottom: 8px;
+            color: #58a6ff;
+            font-size: 1rem;
+            margin-bottom: 5px;
         }
         .job-location {
             font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 20px;
+            color: #8b949e;
+            margin-bottom: 10px;
         }
         ul {
-            padding-left: 25px;
             list-style: none;
+            padding-left: 20px;
         }
         li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             position: relative;
-            padding-left: 25px;
-            color: #d0d0d0;
         }
         li::before {
-            content: '▹';
+            content: "> ";
+            color: #58a6ff;
             position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-size: 1.2rem;
+            left: -20px;
         }
         .skills {
             display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 15px 30px;
-            padding: 25px;
-            background: #171717;
-            border-radius: 12px;
-            border: 1px solid #1e1e22;
-            margin-top: 25px;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+            padding: 15px;
+            background: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 4px;
         }
         .skill-category {
-            font-weight: 600;
-            color: #60a5fa;
+            color: #58a6ff;
+            font-weight: 500;
         }
         .skill-items {
-            color: #d0d0d0;
+            color: #c9d1d9;
         }
         strong {
-            color: #93c5fd;
-            font-weight: 600;
+            color: #f0f6fc;
         }
         em {
-            color: #a0a0a0;
+            color: #8b949e;
             font-style: italic;
         }
-        .sidebar {
-            text-align: center;
-            padding: 20px 0;
-            max-width: 320px;
-        }
-        @media (min-width: 1200px) {
-            .sidebar {
-                position: fixed;
-                top: 40px;
-                left: 40px;
-                width: 320px;
-            }
-            .main-content {
-                margin-left: 360px;
-            }
-        }
-        @media (max-width: 768px) {
-            body {
+        @media (max-width: 600px) {
+            .container {
                 padding: 15px;
             }
-            .container {
-                padding: 25px;
-            }
-            .sidebar {
-                position: static;
-                width: 100%;
-                padding: 15px 0;
-            }
-            .main-content {
-                margin-left: 0;
-            }
             h1 {
-                font-size: 1.8rem;
-            }
-            h2 {
                 font-size: 1.5rem;
             }
-            .contact a {
-                margin: 5px;
-                padding: 6px 12px;
-            }
-            .job {
-                padding: 20px;
+            h2 {
+                font-size: 1.1rem;
             }
             .job-header {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 5px;
             }
             .skills {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                padding: 20px;
-            }
-        }
-        @media print {
-            body {
-                background: #fff;
-                color: #000;
-                padding: 0;
-            }
-            .container, .job, .skills {
-                background: none;
-                border: none;
-                box-shadow: none;
-            }
-            h1, h2, .skill-category, strong, .job-company {
-                color: #000;
-                background: none;
-                -webkit-background-clip: initial;
-                background-clip: initial;
-            }
-            .contact a {
-                color: #000;
-            }
-            li::before {
-                color: #000;
             }
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="container">
         <h1>DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a><br>
+            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a>
             <a href="https://github.com/dheerajck"><i class="fab fa-github"></i>github.com/dheerajck</a>
         </div>
-    </div>
-    <div class="container main-content">
+
         <h2>Experience</h2>
 
         <div class="job">
