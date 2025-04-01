@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Enforce mobile viewport, disable user scaling -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Modified viewport meta tag to allow user scaling for accessibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,19 +18,19 @@
             background: #0d1117;
             color: #c9d1d9;
             line-height: 1.5;
-            padding: 10px;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            padding: 15px;
         }
         .container {
-            max-width: 100%;
-            margin: 0 10px;
-            padding: 10px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 6px;
         }
         h1 {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-size: 1.6rem;
             color: #58a6ff;
             text-align: left;
             margin-bottom: 10px;
@@ -40,20 +40,22 @@
             color: #8b949e;
         }
         .contact {
-            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+            font-size: 0.9rem;
             color: #8b949e;
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         .contact a {
             color: #58a6ff;
             text-decoration: none;
-            margin-right: 15px;
         }
         .contact a:hover {
             text-decoration: underline;
         }
         h2 {
-            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-size: 1.2rem;
             color: #58a6ff;
             margin: 20px 0 15px;
             border-bottom: 1px dashed #30363d;
@@ -64,7 +66,7 @@
         }
         .job {
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 12px;
             background: #0d1117;
             border: 1px solid #21262d;
             border-radius: 4px;
@@ -73,10 +75,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: 1rem;
             color: #c9d1d9;
             margin-bottom: 10px;
-            gap: 5px;
+            gap: 8px;
         }
         .job-title {
             font-weight: 500;
@@ -87,17 +89,17 @@
         }
         .job-company {
             color: #58a6ff;
-            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            font-size: 0.95rem;
             margin-bottom: 5px;
         }
         .job-location {
-            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            font-size: 0.85rem;
             color: #8b949e;
             margin-bottom: 10px;
         }
         ul {
             list-style: none;
-            padding-left: 25px;
+            padding-left: 20px;
         }
         li {
             margin-bottom: 10px;
@@ -113,12 +115,12 @@
         .skills {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 5px;
-            padding: 10px;
+            gap: 8px;
+            padding: 12px;
             background: #0d1117;
             border: 1px solid #21262d;
             border-radius: 4px;
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            font-size: 0.9rem;
         }
         .skill-category {
             color: #58a6ff;
@@ -140,7 +142,7 @@
             position: fixed;
             bottom: 10px;
             right: 10px;
-            font-size: clamp(10px, 2vw, 12px);
+            font-size: 12px;
             color: #30363d;
             cursor: help;
         }
@@ -160,15 +162,16 @@
             text-align: center;
             animation: matrix 2s linear infinite;
             padding: 20px;
+            overflow-y: auto;
         }
         .easter-egg h3 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-size: 1.8rem;
             margin-bottom: 1rem;
         }
         .easter-egg p {
             max-width: 90vw;
             margin-bottom: 1rem;
-            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            font-size: 0.9rem;
         }
         .easter-egg button {
             background: #58a6ff;
@@ -187,48 +190,62 @@
             margin: 20px 0;
             max-width: 90vw;
             text-align: left;
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
+            font-size: 0.9rem;
             white-space: pre-wrap;
         }
         @keyframes matrix {
             0%, 100% { text-shadow: 0 0 10px #58a6ff; }
             50% { text-shadow: 0 0 20px #58a6ff; }
         }
-        /* Mobile-first, override for larger screens */
-        @media (min-width: 600px) {
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            .job {
-                padding: 15px;
-            }
-            .skills {
-                grid-template-columns: 150px 1fr;
-                gap: 10px;
-                padding: 15px;
-            }
-            .job-header {
-                flex-wrap: nowrap;
-            }
-            ul {
-                padding-left: 20px;
-            }
-        }
-        /* Ensure mobile rendering even in desktop mode */
-        @media (max-width: 600px) {
+
+        /* Media queries for responsive design */
+        /* Small screens (mobile) */
+        @media (max-width: 480px) {
             body {
-                font-size: 16px; /* Reset base font size */
+                padding: 10px;
             }
             .container {
-                width: 100%;
-                margin: 0;
-                padding: 8px;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.4rem;
             }
             .job-header {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+            ul {
+                padding-left: 15px;
+            }
+            li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Medium screens (tablets) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .skills {
+                grid-template-columns: 120px 1fr;
+            }
+        }
+
+        /* Large screens (desktops) */
+        @media (min-width: 769px) {
+            body {
+                padding: 20px;
+            }
+            .container {
+                padding: 25px;
+            }
+            .skills {
+                grid-template-columns: 150px 1fr;
+                gap: 15px;
+            }
+            .job {
+                padding: 15px;
             }
         }
     </style>
@@ -237,8 +254,8 @@
     <div class="container">
         <h1>DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a>
-            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i>github.com/dheerajck</a>
+            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i> dheerajck18@gmail.com</a>
+            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i> github.com/dheerajck</a>
         </div>
 
         <h2>Experience</h2>
@@ -398,11 +415,6 @@
 
         function closeEasterEgg() {
             document.querySelector('.easter-egg').style.display = 'none';
-        }
-
-        // Optional: Force mobile-like behavior in desktop mode
-        if (window.innerWidth <= 600 && navigator.userAgent.match(/Mobi/i)) {
-            document.body.style.zoom = "100%"; // Reset any browser scaling
         }
     </script>
 </body>
