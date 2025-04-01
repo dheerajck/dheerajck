@@ -17,18 +17,18 @@
             background: #0d1117;
             color: #c9d1d9;
             line-height: 1.5;
-            padding: 20px;
+            padding: 10px;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 100%;
+            margin: 0 10px;
+            padding: 10px;
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 6px;
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             color: #58a6ff;
             text-align: left;
             margin-bottom: 10px;
@@ -38,7 +38,7 @@
             color: #8b949e;
         }
         .contact {
-            font-size: 0.95rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
             color: #8b949e;
             margin-bottom: 20px;
         }
@@ -51,9 +51,9 @@
             text-decoration: underline;
         }
         h2 {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 3vw, 1.3rem);
             color: #58a6ff;
-            margin: 30px 0 15px;
+            margin: 20px 0 15px;
             border-bottom: 1px dashed #30363d;
         }
         h2::before {
@@ -62,56 +62,61 @@
         }
         .job {
             margin-bottom: 20px;
-            padding: 15px;
+            padding: 10px;
             background: #0d1117;
             border: 1px solid #21262d;
             border-radius: 4px;
         }
         .job-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            font-size: 1.1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             color: #c9d1d9;
             margin-bottom: 10px;
+            gap: 5px;
         }
         .job-title {
             font-weight: 500;
+            word-wrap: break-word;
         }
         .job-date {
             color: #8b949e;
         }
         .job-company {
             color: #58a6ff;
-            font-size: 1rem;
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
             margin-bottom: 5px;
         }
         .job-location {
-            font-size: 0.9rem;
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
             color: #8b949e;
             margin-bottom: 10px;
         }
         ul {
             list-style: none;
-            padding-left: 20px;
+            padding-left: 25px;
         }
         li {
             margin-bottom: 10px;
             position: relative;
+            word-wrap: break-word;
         }
         li::before {
             content: "> ";
             color: #58a6ff;
             position: absolute;
-            left: -20px;
+            left: -15px;
         }
         .skills {
             display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 10px;
-            padding: 15px;
+            grid-template-columns: 1fr;
+            gap: 5px;
+            padding: 10px;
             background: #0d1117;
             border: 1px solid #21262d;
             border-radius: 4px;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
         .skill-category {
             color: #58a6ff;
@@ -119,6 +124,7 @@
         }
         .skill-items {
             color: #c9d1d9;
+            word-wrap: break-word;
         }
         strong {
             color: #f0f6fc;
@@ -132,7 +138,7 @@
             position: fixed;
             bottom: 10px;
             right: 10px;
-            font-size: 12px;
+            font-size: clamp(10px, 2vw, 12px);
             color: #30363d;
             cursor: help;
         }
@@ -151,14 +157,16 @@
             color: #58a6ff;
             text-align: center;
             animation: matrix 2s linear infinite;
+            padding: 20px;
         }
         .easter-egg h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             margin-bottom: 1rem;
         }
         .easter-egg p {
-            max-width: 600px;
+            max-width: 90vw;
             margin-bottom: 1rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
         .easter-egg button {
             background: #58a6ff;
@@ -175,29 +183,34 @@
             color: #4ff742;
             text-shadow: 0 0 5px #4ff742;
             margin: 20px 0;
-            max-width: 600px;
+            max-width: 90vw;
             text-align: left;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
+            white-space: pre-wrap;
         }
         @keyframes matrix {
             0%, 100% { text-shadow: 0 0 10px #58a6ff; }
             50% { text-shadow: 0 0 20px #58a6ff; }
         }
-        @media (max-width: 600px) {
+        @media (min-width: 600px) {
             .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .job {
                 padding: 15px;
             }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.1rem;
+            .skills {
+                grid-template-columns: 150px 1fr;
+                gap: 10px;
+                padding: 15px;
             }
             .job-header {
-                flex-direction: column;
-                gap: 5px;
+                flex-wrap: nowrap;
             }
-            .skills {
-                grid-template-columns: 1fr;
+            ul {
+                padding-left: 20px;
             }
         }
     </style>
@@ -206,8 +219,8 @@
     <div class="container">
         <h1>DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a>
-            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i>github.com/dheerajck</a>
+            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i> dheerajck18@gmail.com</a>
+            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i> github.com/dheerajck</a>
         </div>
 
         <h2>Experience</h2>
