@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enforce mobile viewport, disable user scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>DHEERAJ C K - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,6 +19,7 @@
             color: #c9d1d9;
             line-height: 1.5;
             padding: 10px;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .container {
             max-width: 100%;
@@ -192,6 +194,7 @@
             0%, 100% { text-shadow: 0 0 10px #58a6ff; }
             50% { text-shadow: 0 0 20px #58a6ff; }
         }
+        /* Mobile-first, override for larger screens */
         @media (min-width: 600px) {
             .container {
                 max-width: 800px;
@@ -213,14 +216,29 @@
                 padding-left: 20px;
             }
         }
+        /* Ensure mobile rendering even in desktop mode */
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px; /* Reset base font size */
+            }
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 8px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>DHEERAJ C K</h1>
         <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i> dheerajck18@gmail.com</a>
-            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i> github.com/dheerajck</a>
+            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i>dheerajck18@gmail.com</a>
+            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i>github.com/dheerajck</a>
         </div>
 
         <h2>Experience</h2>
@@ -380,6 +398,11 @@
 
         function closeEasterEgg() {
             document.querySelector('.easter-egg').style.display = 'none';
+        }
+
+        // Optional: Force mobile-like behavior in desktop mode
+        if (window.innerWidth <= 600 && navigator.userAgent.match(/Mobi/i)) {
+            document.body.style.zoom = "100%"; // Reset any browser scaling
         }
     </script>
 </body>
