@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHEERAJ C K - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        html {
+            background-color: #0d1117; /* Match the darkest part of your body's gradient */
+            min-height: 100vh; /* Ensure html element tries to fill viewport height */
+        }
         * {
             margin: 0;
             padding: 0;
@@ -14,70 +18,109 @@
         }
         body {
             font-family: 'Fira Code', monospace;
-            background: #0d1117;
+            background: linear-gradient(to bottom right, #0d1117, #10141b);
             color: #c9d1d9;
-            line-height: 1.5;
-            padding: 15px;
+            line-height: 1.7;
+            padding: 20px;
+            font-size: 1.05em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh; /* Ensure body element also tries to fill viewport height */
         }
         .container {
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 15px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
             background: #161b22;
             border: 1px solid #30363d;
-            border-radius: 6px;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         h1 {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
+            font-weight: 600;
             color: #58a6ff;
             text-align: left;
-            margin-bottom: 10px;
+            margin-bottom: 18px;
+            text-shadow: 0 0 5px rgba(88, 166, 255, 0.3);
         }
         h1::before {
             content: "$ ";
             color: #8b949e;
         }
         .contact {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #8b949e;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 22px;
         }
         .contact a {
             color: #58a6ff;
             text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
         }
         .contact a:hover {
+            color: #79c0ff;
             text-decoration: underline;
         }
+        .contact a i {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+        .contact a:hover i {
+            transform: scale(1.1);
+        }
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 500;
             color: #58a6ff;
-            margin: 20px 0 15px;
-            border-bottom: 1px dashed #30363d;
+            margin: 35px 0 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            position: relative;
         }
         h2::before {
             content: ">>> ";
             color: #8b949e;
+            margin-right: 5px;
+        }
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 60px;
+            height: 2px;
+            background-color: #58a6ff;
         }
         .job {
-            margin-bottom: 20px;
-            padding: 12px;
+            margin-bottom: 28px;
+            padding: 20px;
             background: #0d1117;
             border: 1px solid #21262d;
-            border-radius: 4px;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        .job:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            border-left-color: #79c0ff;
+            background-color: #1a2029;
         }
         .job-header {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #c9d1d9;
-            margin-bottom: 10px;
-            gap: 8px;
+            margin-bottom: 12px;
+            gap: 10px;
         }
         .job-title {
             font-weight: 500;
@@ -85,65 +128,95 @@
         }
         .job-date {
             color: #8b949e;
+            font-size: 0.95rem;
         }
         .job-company {
             color: #58a6ff;
-            font-size: 0.95rem;
-            margin-bottom: 5px;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
         }
         .job-location {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: #8b949e;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
         ul {
             list-style: none;
-            padding-left: 20px;
+            padding-left: 28px;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             position: relative;
             word-wrap: break-word;
+            font-size: 1rem;
         }
         li::before {
             content: "> ";
             color: #58a6ff;
+            font-weight: bold;
             position: absolute;
-            left: -15px;
+            left: -22px;
         }
         .skills {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            padding: 12px;
+            padding: 20px;
             background: #0d1117;
             border: 1px solid #21262d;
-            border-radius: 4px;
-            font-size: 0.9rem;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .skill-category-container {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 12px 18px;
+            align-items: baseline;
+            margin-bottom: 14px;
+        }
+        .skill-category-container:last-child {
+            margin-bottom: 0;
         }
         .skill-category {
             color: #58a6ff;
             font-weight: 500;
+            font-size: 1.05rem;
         }
         .skill-items {
-            color: #c9d1d9;
-            word-wrap: break-word;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-items span {
+            background-color: #21262d;
+            color: #79c0ff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+        .skill-items span:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+            transform: translateY(-2px);
         }
         strong {
             color: #f0f6fc;
+            font-weight: 500;
         }
         em {
             color: #8b949e;
             font-style: italic;
         }
+
         /* Easter Egg Styles */
         .konami-code {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
+            bottom: 12px;
+            right: 12px;
+            font-size: 13px;
             color: #30363d;
             cursor: help;
+            background-color: #0d1117;
+            padding: 4px 6px;
+            border-radius: 3px;
         }
         .easter-egg {
             display: none;
@@ -152,7 +225,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -164,32 +237,33 @@
             overflow-y: auto;
         }
         .easter-egg h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
         }
         .easter-egg p {
             max-width: 90vw;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
         }
         .easter-egg button {
             background: #58a6ff;
             color: #0d1117;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 22px;
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Fira Code', monospace;
-            margin-top: 20px;
+            margin-top: 22px;
+            font-size: 1rem;
         }
         .terminal-text {
             font-family: 'Fira Code', monospace;
             color: #4ff742;
             text-shadow: 0 0 5px #4ff742;
-            margin: 20px 0;
+            margin: 22px 0;
             max-width: 90vw;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 1rem;
             white-space: pre-wrap;
         }
         @keyframes matrix {
@@ -198,149 +272,114 @@
         }
 
         /* Media queries for responsive design */
-        /* Small screens (mobile) */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .container {
+                padding: 20px;
+                margin: 15px auto;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .job-header {
+                font-size: 1.05rem;
+            }
+            .skill-category-container {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            .skill-category {
+                margin-bottom: 5px;
+            }
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 10px;
+                line-height: 1.6;
+                font-size: 0.95em;
             }
             .container {
-                padding: 10px;
+                padding: 15px;
             }
             h1 {
-                font-size: 1.4rem;
+                font-size: 1.7rem;
+            }
+            .contact {
+                font-size: 0.95rem;
+                gap: 12px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .job {
+                padding: 15px;
+                border-left-width: 3px;
             }
             .job-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
             ul {
-                padding-left: 15px;
+                padding-left: 20px;
             }
             li {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Medium screens (tablets) */
-        @media (min-width: 481px) and (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            .skills {
-                grid-template-columns: 120px 1fr;
-            }
-        }
-
-        /* Large screens (desktops) */
-        @media (min-width: 769px) {
-            body {
-                padding: 30px;
-                font-size: 18px;
-            }
-            .container {
-                max-width: 1000px;
-                padding: 40px;
-            }
-            h1 {
-                font-size: 2.4rem;
-                margin-bottom: 20px;
-            }
-            .contact {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
-                gap: 25px;
-            }
-            h2 {
-                font-size: 1.8rem;
-                margin: 30px 0 20px;
-            }
-            .job {
-                padding: 25px;
-                margin-bottom: 30px;
-                border-radius: 8px;
-            }
-            .job-header {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-                gap: 15px;
-            }
-            .job-company {
-                font-size: 1.3rem;
-                margin-bottom: 8px;
-            }
-            .job-location {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            ul {
-                padding-left: 25px;
-            }
-            li {
-                font-size: 1.15rem;
-                margin-bottom: 15px;
+                font-size: 0.95rem;
             }
             li::before {
-                left: -20px;
+                left: -18px;
             }
             .skills {
-                grid-template-columns: 180px 1fr;
-                gap: 20px;
-                padding: 25px;
-                font-size: 1.15rem;
+                padding: 15px;
             }
-            .konami-code {
-                font-size: 14px;
-                bottom: 15px;
-                right: 15px;
-            }
-            .easter-egg h3 {
-                font-size: 2.4rem;
-            }
-            .easter-egg p, .terminal-text {
-                font-size: 1.2rem;
+            .skill-items span {
+                padding: 5px 9px;
+                font-size: 0.85rem;
             }
         }
 
-        /* Extra large screens */
-        @media (min-width: 1200px) {
+        @media (min-width: 1000px) {
             body {
-                padding: 40px;
-                font-size: 20px;
+                padding: 30px;
+                font-size: 1.1em;
             }
             .container {
-                max-width: 1200px;
-                padding: 50px;
+                max-width: 950px;
+                padding: 40px;
             }
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.4rem;
             }
             .contact {
-                font-size: 1.3rem;
+                font-size: 1.05rem;
+                gap: 28px;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
+            }
+            .job {
+                padding: 22px;
             }
             .job-header {
-                font-size: 1.5rem;
+                font-size: 1.15rem;
             }
             .job-company {
-                font-size: 1.4rem;
-            }
-            .job-location {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             li {
-                font-size: 1.25rem;
+                font-size: 1.05rem;
             }
-            .skills {
-                grid-template-columns: 200px 1fr;
-                font-size: 1.25rem;
+            .skill-category-container {
+                grid-template-columns: 190px 1fr;
             }
-            .easter-egg h3 {
-                font-size: 2.6rem;
-            }
-            .easter-egg p, .terminal-text {
-                font-size: 1.3rem;
+            .skill-items span {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -365,7 +404,7 @@
             <ul>
                 <li>Integrated <strong>30+</strong> API endpoints for a seamless Ping API ecosystem, prioritizing developer usability.</li>
                 <li>Designed PostgreSQL databases for geospatial data (FEMA flood zones, National Risk Index), optimizing for intuitive querying and visualization.</li>
-                <li>Revamped CI/CD pipelines, accelerating workflows by <strong>400%</strong> with a focus on developer experience.</li>
+                <li>Revamped CI/CD pipelines, accelerating workflows by <strong>400%</strong>, which significantly improved developer experience.</li>
                 <li>Accelerated text search performance by <strong>10-25x</strong> with trigram indexes, enhancing user query responsiveness.</li>
                 <li>Eliminated bottlenecks in async workers by converting synchronous tasks to asynchronous, achieving a <strong>125%</strong> task execution speedup.</li>
                 <li>Implemented a TIGER Geocoder instance for US address mapping and integrated it with third-party geocoders from Google, Apple and Azure to improve geocoding confidence and accuracy.</li>
@@ -447,21 +486,41 @@
 
         <h2>Skills & Interests</h2>
         <div class="skills">
-            <div class="skill-category">Languages:</div>
-            <div class="skill-items">Python, C, Cython, Golang</div>
-            <div class="skill-category">Frameworks:</div>
-            <div class="skill-items">Django, Flask, FastAPI</div>
-            <div class="skill-category">Libraries:</div>
-            <div class="skill-items">NumPy, Pandas, GeoPandas, Polars</div>
-            <div class="skill-category">Databases:</div>
-            <div class="skill-items">PostgreSQL, MongoDB</div>
-            <div class="skill-category">Interests:</div>
-            <div class="skill-items">Gaming, Problem solving(seriously), Beaches, Fishing</div>
+            <div class="skill-category-container">
+                <div class="skill-category">Languages:</div>
+                <div class="skill-items">
+                    <span>Python</span><span>C</span><span>Cython</span><span>Golang</span>
+                </div>
+            </div>
+            <div class="skill-category-container">
+                <div class="skill-category">Frameworks:</div>
+                <div class="skill-items">
+                    <span>Django</span><span>Flask</span><span>FastAPI</span>
+                </div>
+            </div>
+            <div class="skill-category-container">
+                <div class="skill-category">Libraries:</div>
+                <div class="skill-items">
+                    <span>NumPy</span><span>Pandas</span><span>GeoPandas</span><span>Polars</span>
+                </div>
+            </div>
+            <div class="skill-category-container">
+                <div class="skill-category">Databases:</div>
+                <div class="skill-items">
+                    <span>PostgreSQL</span><span>MongoDB</span>
+                </div>
+            </div>
+            <div class="skill-category-container">
+                <div class="skill-category">Interests:</div>
+                <div class="skill-items">
+                    <span>Gaming</span><span>Problem solving(seriously)</span><span>Beaches</span><span>Fishing</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Easter Egg -->
-    <div class="konami-code">↑↑↓↓←→←→BA</div>
+    <!-- <div class="konami-code">↑↑↓↓←→←→BA</div>
     <div class="easter-egg">
         <h3>You Found The Secret Developer Mode!</h3>
         <div class="terminal-text">
@@ -476,9 +535,10 @@
         </div>
         <p>Btw why am I starting with btw idk anyway Actually neural network to predict fish movement or catching fish seems something lol!</p>
         <button onclick="closeEasterEgg()">Back to Resume</button>
-    </div>
+    </div> -->
 
     <!-- Easter Egg Script -->
+    <!--
     <script>
         // Konami Code Sequence
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
@@ -512,5 +572,6 @@
             document.querySelector('.easter-egg').style.display = 'none';
         }
     </script>
+    -->
 </body>
 </html>
