@@ -140,7 +140,7 @@
     </div>
     <main>
         <header class="hero reveal">
-            <div class="eyebrow">Software Engineer</div>
+            <div class="eyebrow">Software Engineer · opinionated</div>
             <h1>Dheeraj C K</h1>
             <p class="lede">I'd rather solve a problem than be afraid of it - I believe <strong>small, frequent development</strong> is the way.</p>
             <p class="sub">I mostly work with <span class="accent">Python</span> nowadays, but I'll use whatever else helps me do what I want.</p>
@@ -290,23 +290,46 @@
 
         const palette = ['#eaf7ff', '#cdeafa', '#a9d8f2', '#7fc0e2'];
         function bird(sx) {
-            const d = 0.4 + Math.random() * 0.6;
-            const baseY = 0.06 * h + Math.random() * h * 0.34;   // sky band, above the rising sea
+            const d = 0.32 + Math.random() * 0.68;               // depth: 0.32 (far) .. 1 (near)
+            const baseY = 0.05 * h + Math.random() * h * 0.36;   // sky band, above the rising sea
             return {
-                x: sx !== undefined ? sx : -40 - Math.random() * w,
+                x: sx !== undefined ? sx : -60 - Math.random() * w,
                 baseY, y: baseY,
-                size: 8 + d * 18, speed: (0.3 + d * 0.6) * (0.7 + Math.random() * 0.6),
-                phase: Math.random() * 6.28, flap: 0.07 + Math.random() * 0.06,   // steady wingbeat
-                wing: 0.5, bob: 8 + Math.random() * 16, bobSpeed: 0.004 + Math.random() * 0.004,
+                size: 6 + d * 24,                                 // near birds are noticeably bigger
+                speed: (0.18 + d * d * 1.15) * (0.85 + Math.random() * 0.3),  // near birds sweep across much faster (parallax)
+                phase: Math.random() * 6.28, flap: 0.05 + d * 0.05 + Math.random() * 0.04,   // varied wingbeats, desynced
+                wing: 0.5, bob: 6 + d * 18, bobSpeed: 0.004 + Math.random() * 0.004,
                 t: Math.random() * 1000,
-                alpha: 0.16 + d * 0.30, color: palette[(Math.random() * palette.length) | 0],
+                amp: 0.45 + Math.random() * 0.4,                  // how far the wings swing
+                bend: 0.22 + Math.random() * 0.26,               // how curved/pointed the wings are
+                asymL: 0.88 + Math.random() * 0.24, asymR: 0.88 + Math.random() * 0.24,   // slight left/right asymmetry
+                alpha: 0.12 + d * 0.4,                            // distant birds fade into the haze
+                color: palette[(Math.random() * palette.length) | 0],
                 mode: 'fly'
             };
         }
         const N = innerWidth < 600 ? 9 : 18;
         const birds = Array.from({ length: N }, () => bird(Math.random() * w));
+
+        // the occasional shooting star streaking across the upper sky
+        let nextStar = 500 + Math.random() * 900, star = null;
+        function updateStar() {
+            if (!star) {
+                if (--nextStar <= 0) { star = { x: w * (0.35 + Math.random() * 0.55), y: -8, vx: -(2.6 + Math.random() * 1.8), vy: 2.4 + Math.random() * 1.6, life: 1, len: 70 + Math.random() * 50 }; nextStar = 800 + Math.random() * 1400; }
+                return;
+            }
+            star.x += star.vx; star.y += star.vy; star.life -= 0.011;
+            if (star.life <= 0 || star.y > h * 0.55) { star = null; return; }
+            const inv = star.len / Math.hypot(star.vx, star.vy), tx = star.x - star.vx * inv, ty = star.y - star.vy * inv;
+            const g = x.createLinearGradient(star.x, star.y, tx, ty);
+            g.addColorStop(0, 'rgba(255,255,255,' + star.life + ')'); g.addColorStop(1, 'rgba(255,255,255,0)');
+            x.save(); x.strokeStyle = g; x.lineWidth = 2; x.lineCap = 'round';
+            x.beginPath(); x.moveTo(star.x, star.y); x.lineTo(tx, ty); x.stroke();
+            x.globalAlpha = star.life; x.fillStyle = '#fff'; x.beginPath(); x.arc(star.x, star.y, 1.8, 0, 6.2832); x.fill();
+            x.restore();
+        }
         function draw(b) {
-            const s = b.size, lift = (1 - b.wing) * s * 0.6;
+            const s = b.size;
             // fade out over the text column, fade back in over the open sea in the margins
             const gap = sideGap(), L = gap, R = w - gap, fade = 120;
             let m = 1;
@@ -316,9 +339,14 @@
                 else m = 0;
             }
             if (m <= 0) return;
+            const lift = (1 - b.wing) * s * b.amp;     // wings sweep as it flaps — amount varies per bird
             x.save(); x.translate(b.x, b.y); x.globalAlpha = b.alpha * m;
             x.strokeStyle = b.color; x.lineWidth = Math.max(1.2, s * 0.1); x.lineCap = 'round'; x.lineJoin = 'round';
-            x.beginPath(); x.moveTo(-s, -lift); x.quadraticCurveTo(-s * 0.35, lift * 0.35, 0, 0); x.quadraticCurveTo(s * 0.35, lift * 0.35, s, -lift); x.stroke();
+            x.beginPath();
+            x.moveTo(-s, -lift * b.asymL);
+            x.quadraticCurveTo(-s * 0.35, lift * b.bend, 0, 0);
+            x.quadraticCurveTo(s * 0.35, lift * b.bend, s, -lift * b.asymR);
+            x.stroke();
             x.restore();
         }
 
@@ -479,6 +507,7 @@
 
         (function tick() {
             x.clearRect(0, 0, w, h);
+            updateStar();
             if (--nextEvent <= 0) { startDive(); nextEvent = 300 + Math.random() * 360; }
             for (const b of birds) updateBird(b);
 
