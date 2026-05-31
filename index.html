@@ -3,575 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHEERAJ C K - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dheeraj C K — makes slow things fast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        html {
-            background-color: #0d1117; /* Match the darkest part of your body's gradient */
-            min-height: 100vh; /* Ensure html element tries to fill viewport height */
+        :root {
+            --ink: #f6eee0;
+            --soft: #cdbfad;
+            --dim: #9a8b79;
+            --ember: #ff9e6d;
+            --rose: #ff7e9d;
+            --gold: #ffd596;
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { background: #160d20; }
         body {
-            font-family: 'Fira Code', monospace;
-            background: linear-gradient(to bottom right, #0d1117, #10141b);
-            color: #c9d1d9;
-            line-height: 1.7;
-            padding: 20px;
-            font-size: 1.05em;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--ink);
+            line-height: 1.75;
+            font-size: 1.05rem;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh; /* Ensure body element also tries to fill viewport height */
+            overflow-x: hidden;
+            background:
+                radial-gradient(1200px 760px at 82% -8%, rgba(255,158,109,0.30), transparent 60%),
+                radial-gradient(1000px 680px at 12% 6%, rgba(255,126,157,0.20), transparent 55%),
+                linear-gradient(165deg, #2c1742 0%, #241038 28%, #190f24 66%, #110a18 100%);
+            background-attachment: fixed;
         }
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 30px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        /* birds + soft center scrim live behind everything */
+        #sky { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        body::before {
+            content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background: radial-gradient(120% 80% at 50% 40%, rgba(10,6,16,0.55), transparent 70%);
         }
+
+        main { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 8vh 28px 14vh; }
+
+        /* hero */
+        .hero { padding: 4vh 0 6vh; }
+        .eyebrow { color: var(--ember); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; font-size: 0.82rem; margin-bottom: 14px; }
         h1 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #58a6ff;
-            text-align: left;
-            margin-bottom: 18px;
-            text-shadow: 0 0 5px rgba(88, 166, 255, 0.3);
+            font-family: 'Sora', sans-serif; font-weight: 800; line-height: 1.02;
+            font-size: clamp(2.6rem, 8vw, 4.4rem); letter-spacing: -1.5px; margin-bottom: 20px;
+            background: linear-gradient(105deg, var(--gold), var(--ember) 48%, var(--rose));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
-        h1::before {
-            content: "$ ";
-            color: #8b949e;
-        }
-        .contact {
-            font-size: 1rem;
-            color: #8b949e;
-            margin-bottom: 28px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-        }
-        .contact a {
-            color: #58a6ff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-        .contact a:hover {
-            color: #79c0ff;
-            text-decoration: underline;
-        }
-        .contact a i {
-            margin-right: 8px;
-            transition: transform 0.3s ease;
-        }
-        .contact a:hover i {
-            transform: scale(1.1);
-        }
+        .lede { font-size: clamp(1.05rem, 2.4vw, 1.35rem); color: var(--ink); max-width: 60ch; line-height: 1.6; margin-bottom: 14px; }
+        .lede strong { color: var(--gold); font-weight: 600; }
+        .sub { color: var(--soft); max-width: 58ch; }
+        .sub .accent { color: var(--ember); }
+        .contact { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 30px; font-size: 0.98rem; }
+        .contact a { color: var(--soft); text-decoration: none; display: inline-flex; align-items: center; transition: color .25s; }
+        .contact a i { margin-right: 9px; color: var(--ember); transition: transform .25s; }
+        .contact a:hover { color: var(--gold); }
+        .contact a:hover i { transform: translateY(-2px) scale(1.15); }
+
+        /* sections */
+        section { margin-top: 9vh; }
         h2 {
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #58a6ff;
-            margin: 35px 0 22px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #30363d;
-            position: relative;
+            font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--ink);
+            display: flex; align-items: center; gap: 16px; margin-bottom: 34px;
         }
-        h2::before {
-            content: ">>> ";
-            color: #8b949e;
-            margin-right: 5px;
-        }
-        h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            width: 60px;
-            height: 2px;
-            background-color: #58a6ff;
-        }
-        .job {
-            margin-bottom: 28px;
-            padding: 20px;
-            background: #0d1117;
-            border: 1px solid #21262d;
-            border-left: 4px solid #58a6ff;
-            border-radius: 6px;
-            transition: all 0.3s ease-in-out;
-        }
-        .job:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            border-left-color: #79c0ff;
-            background-color: #1a2029;
-        }
-        .job-header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            font-size: 1.1rem;
-            color: #c9d1d9;
-            margin-bottom: 12px;
-            gap: 10px;
-        }
-        .job-title {
-            font-weight: 500;
-            word-wrap: break-word;
-        }
-        .job-date {
-            color: #8b949e;
-            font-size: 0.95rem;
-        }
-        .job-company {
-            color: #58a6ff;
-            font-size: 1.05rem;
-            margin-bottom: 8px;
-        }
-        .job-location {
-            font-size: 0.95rem;
-            color: #8b949e;
-            margin-bottom: 14px;
-        }
-        ul {
-            list-style: none;
-            padding-left: 28px;
-        }
-        li {
-            margin-bottom: 14px;
-            position: relative;
-            word-wrap: break-word;
-            font-size: 1rem;
-        }
+        h2 .num { font-size: 0.85rem; color: var(--ember); font-weight: 600; letter-spacing: 1px; }
+        h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(255,213,150,0.45), transparent); }
+
+        .entry { margin-bottom: 46px; }
+        .entry-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+        .role { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 1.22rem; color: var(--ink); }
+        .when { color: var(--dim); font-size: 0.9rem; white-space: nowrap; }
+        .where { color: var(--ember); font-weight: 600; margin-top: 2px; }
+        .where span { color: var(--dim); font-weight: 400; }
+        .stack { color: var(--dim); font-size: 0.92rem; font-style: normal; }
+        ul { list-style: none; margin-top: 16px; }
+        li { position: relative; padding-left: 28px; margin-bottom: 13px; color: var(--soft); }
         li::before {
-            content: "> ";
-            color: #58a6ff;
-            font-weight: bold;
-            position: absolute;
-            left: -22px;
+            content: ""; position: absolute; left: 2px; top: 11px; width: 8px; height: 8px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--ember));
         }
-        .skills {
-            padding: 20px;
-            background: #0d1117;
-            border: 1px solid #21262d;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-        .skill-category-container {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 12px 18px;
-            align-items: baseline;
-            margin-bottom: 14px;
-        }
-        .skill-category-container:last-child {
-            margin-bottom: 0;
-        }
-        .skill-category {
-            color: #58a6ff;
-            font-weight: 500;
-            font-size: 1.05rem;
-        }
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .skill-items span {
-            background-color: #21262d;
-            color: #79c0ff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-        }
-        .skill-items span:hover {
-            background-color: #58a6ff;
-            color: #0d1117;
-            transform: translateY(-2px);
-        }
-        strong {
-            color: #f0f6fc;
-            font-weight: 500;
-        }
-        em {
-            color: #8b949e;
-            font-style: italic;
-        }
+        li strong { color: var(--gold); font-weight: 600; }
 
-        /* Easter Egg Styles */
-        .konami-code {
-            position: fixed;
-            bottom: 12px;
-            right: 12px;
-            font-size: 13px;
-            color: #30363d;
-            cursor: help;
-            background-color: #0d1117;
-            padding: 4px 6px;
-            border-radius: 3px;
+        /* skills */
+        .grid { display: grid; grid-template-columns: 130px 1fr; gap: 18px 22px; align-items: baseline; }
+        .cat { color: var(--ember); font-weight: 600; font-family: 'Sora', sans-serif; }
+        .tags { display: flex; flex-wrap: wrap; gap: 9px; }
+        .tags span {
+            background: rgba(255,213,150,0.07); color: var(--ink); border: 1px solid rgba(255,213,150,0.18);
+            padding: 5px 14px; border-radius: 999px; font-size: 0.9rem; transition: all .25s;
         }
-        .easter-egg {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: #58a6ff;
-            text-align: center;
-            animation: matrix 2s linear infinite;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .easter-egg h3 {
-            font-size: 2rem;
-            margin-bottom: 1.2rem;
-        }
-        .easter-egg p {
-            max-width: 90vw;
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
-        }
-        .easter-egg button {
-            background: #58a6ff;
-            color: #0d1117;
-            border: none;
-            padding: 12px 22px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Fira Code', monospace;
-            margin-top: 22px;
-            font-size: 1rem;
-        }
-        .terminal-text {
-            font-family: 'Fira Code', monospace;
-            color: #4ff742;
-            text-shadow: 0 0 5px #4ff742;
-            margin: 22px 0;
-            max-width: 90vw;
-            text-align: left;
-            font-size: 1rem;
-            white-space: pre-wrap;
-        }
-        @keyframes matrix {
-            0%, 100% { text-shadow: 0 0 10px #58a6ff; }
-            50% { text-shadow: 0 0 20px #58a6ff; }
-        }
+        .tags span:hover { background: linear-gradient(120deg, var(--ember), var(--rose)); color: #160d20; transform: translateY(-2px); border-color: transparent; }
 
-        /* Media queries for responsive design */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-                font-size: 1em;
-            }
-            .container {
-                padding: 20px;
-                margin: 15px auto;
-            }
-            h1 {
-                font-size: 1.9rem;
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            .job-header {
-                font-size: 1.05rem;
-            }
-            .skill-category-container {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-            .skill-category {
-                margin-bottom: 5px;
-            }
-        }
+        footer { margin-top: 11vh; color: var(--dim); font-size: 0.9rem; text-align: center; }
+        footer a { color: var(--ember); text-decoration: none; }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-                line-height: 1.6;
-                font-size: 0.95em;
-            }
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.7rem;
-            }
-            .contact {
-                font-size: 0.95rem;
-                gap: 12px;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            .job {
-                padding: 15px;
-                border-left-width: 3px;
-            }
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            ul {
-                padding-left: 20px;
-            }
-            li {
-                font-size: 0.95rem;
-            }
-            li::before {
-                left: -18px;
-            }
-            .skills {
-                padding: 15px;
-            }
-            .skill-items span {
-                padding: 5px 9px;
-                font-size: 0.85rem;
-            }
-        }
+        /* reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.in { opacity: 1; transform: none; }
 
-        @media (min-width: 1000px) {
-            body {
-                padding: 30px;
-                font-size: 1.1em;
-            }
-            .container {
-                max-width: 950px;
-                padding: 40px;
-            }
-            h1 {
-                font-size: 2.4rem;
-            }
-            .contact {
-                font-size: 1.05rem;
-                gap: 28px;
-            }
-            h2 {
-                font-size: 1.75rem;
-            }
-            .job {
-                padding: 22px;
-            }
-            .job-header {
-                font-size: 1.15rem;
-            }
-            .job-company {
-                font-size: 1.1rem;
-            }
-            li {
-                font-size: 1.05rem;
-            }
-            .skill-category-container {
-                grid-template-columns: 190px 1fr;
-            }
-            .skill-items span {
-                font-size: 0.95rem;
-            }
+        @media (max-width: 600px) {
+            main { padding: 6vh 20px 12vh; }
+            .grid { grid-template-columns: 1fr; gap: 6px 0; }
+            .cat { margin-top: 10px; }
+            .entry-top { flex-direction: column; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #sky { display: none; }
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DHEERAJ C K</h1>
-        <div class="contact">
-            <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i> dheerajck18@gmail.com</a>
-            <a href="https://github.com/dheerajck"><i class="fab fa-github"></i> github.com/dheerajck</a>
-        </div>
-
-        <h2>Experience</h2>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Software Engineer</div>
-                <div class="job-date">Feb 2023 - Present</div>
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <main>
+        <header class="hero reveal">
+            <div class="eyebrow">Software Engineer · Backend &amp; Data</div>
+            <h1>Dheeraj C K</h1>
+            <p class="lede">I make slow systems <strong>embarrassingly fast</strong>. Give me a sluggish query, a pipeline on fire, or an API nobody wants to touch — I'll hand it back quick, clean, and boring in the best possible way.</p>
+            <p class="sub">Mostly <span class="accent">Python</span> and <span class="accent">PostgreSQL</span>, with an unreasonable love for shaving off milliseconds. Off the clock: gaming, beaches, and out-stubborning fish.</p>
+            <div class="contact">
+                <a href="mailto:dheerajck18@gmail.com"><i class="fas fa-envelope"></i> dheerajck18@gmail.com</a>
+                <a href="https://github.com/dheerajck"><i class="fab fa-github"></i> github.com/dheerajck</a>
             </div>
-            <div class="job-company">Ping Data Intelligence</div>
-            <div class="job-location">Remote - USA</div>
-            <ul>
-                <li>Integrated <strong>30+</strong> API endpoints for a seamless Ping API ecosystem, prioritizing developer usability.</li>
-                <li>Designed PostgreSQL databases for geospatial data (FEMA flood zones, National Risk Index), optimizing for intuitive querying and visualization.</li>
-                <li>Revamped CI/CD pipelines, accelerating workflows by <strong>400%</strong>, which significantly improved developer experience.</li>
-                <li>Accelerated text search performance by <strong>10-25x</strong> with trigram indexes, enhancing user query responsiveness.</li>
-                <li>Eliminated bottlenecks in async workers by converting synchronous tasks to asynchronous, achieving a <strong>125%</strong> task execution speedup.</li>
-                <li>Implemented a TIGER Geocoder instance for US address mapping and integrated it with third-party geocoders from Google, Apple and Azure to improve geocoding confidence and accuracy.</li>
-            </ul>
-        </div>
+        </header>
 
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Freelancing</div>
-                <div class="job-date">April 2022 - Present</div>
-            </div>
-            <div class="job-company">Self-employed</div>
-            <div class="job-location">Remote - Global</div>
-            <ul>
-                <li>Implemented batch processing workflows using PostgreSQL control structures and optimized queries for memory-efficient retrieval of 10M+ records, delivering a speedup of <strong>1.52x</strong> for large-scale data processing over existing workflows.</li>
-                <li>Accelerated CI/CD pipelines by selectively running unit test suites based on code changes, resulting in significant improvements to developer experience and cost savings.</li>
-                <li>Developed Django REST API web apps with a focus on scalable, intuitive interfaces.</li>
-                <li>Engineered Python web scrapers for efficient, user-centric data delivery.</li>
-                <li>Designed resource allocation algorithms, balancing efficiency with practical usability.</li>
-                <li>Created Telegram bots with seamless third-party API integration for enhanced user engagement.</li>
-            </ul>
-        </div>
+        <section>
+            <h2 class="reveal"><span class="num">01</span> Where I've worked</h2>
 
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Software Engineer</div>
-                <div class="job-date">September 2021 - March 2022</div>
-            </div>
-            <div class="job-company">Qburst</div>
-            <div class="job-location">Onsite - Kerala, India</div>
-            <ul>
-                <li>Built a TCP Client/Server system for real-time device monitoring, ensuring clear data presentation.</li>
-                <li>Designed a real-time Django-WebSocket dashboard, delivering an intuitive UI for network metrics.</li>
-                <li>Developed an intelligent document analyzer with inline comments, providing real-time grammar and spelling feedback to enhance resume review UX.</li>
-            </ul>
-        </div>
-
-        <h2>Projects</h2>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Real Estate Trend Analyzer - Funda Trends | <em>Python, BeautifulSoup, PostgreSQL</em></div>
-            </div>
-            <ul>
-                <li>Scraped <strong>1M+ listings</strong> from funda.nl with anti-blocking techniques, enabling smooth data-driven insights.</li>
-                <li>Integrated data into a real-time SaaS pipeline, empowering users with actionable price trend insights.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Low-Level Web Application | <em>Python, WSGI, REST API, PostgreSQL</em></div>
-            </div>
-            <ul>
-                <li>Built a mailing backend handling <strong>500+ concurrent requests</strong>, designed for simplicity and reliability.</li>
-                <li>Added REST APIs with WSGI, ensuring a clean, user-friendly integration experience.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Inventory Optimization Algorithm | <em>Python, Cython, Numpy</em></div>
-            </div>
-            <ul>
-                <li>Created a Knapsack-based tool to streamline order grouping, saving resellers hours of effort.</li>
-                <li>Optimized with Cython for <strong>6x</strong> faster runtime, enhancing real-time usability.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div class="job-title">Multilingual Video Subtitle Generator | <em>OpenAI Whisper, Silero VAD, EasyNMT</em></div>
-            </div>
-            <ul>
-                <li>Developed a tool for subtitles in <strong>20+ languages</strong>, cutting costs by <strong>70%</strong> with a focus on user efficiency.</li>
-                <li>Improved accuracy by <strong>25%</strong> with voice activity segmentation, refining the end-user experience.</li>
-            </ul>
-        </div>
-
-        <h2>Skills & Interests</h2>
-        <div class="skills">
-            <div class="skill-category-container">
-                <div class="skill-category">Languages:</div>
-                <div class="skill-items">
-                    <span>Python</span><span>C</span><span>Cython</span><span>Golang</span><span>JavaScript</span>
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Software Engineer</div>
+                    <div class="when">Feb 2023 – Present</div>
                 </div>
+                <div class="where">Ping Data Intelligence <span>· Remote, USA</span></div>
+                <ul>
+                    <li>Took CI/CD from a coffee-break to a glance — <strong>400% faster</strong> pipelines, and a team that stopped dreading deploys.</li>
+                    <li>Made text search <strong>10–25× faster</strong> with trigram indexes; queries that used to crawl now feel instant.</li>
+                    <li>Rewrote synchronous workers to be genuinely async, squeezing out a <strong>125%</strong> throughput jump.</li>
+                    <li>Shipped <strong>30+ API endpoints</strong> across the Ping API ecosystem — built so other developers don't curse my name.</li>
+                    <li>Designed PostgreSQL schemas for messy geospatial data (FEMA flood zones, National Risk Index) that are actually pleasant to query and visualize.</li>
+                    <li>Stood up a TIGER Geocoder and blended it with Google, Apple, and Azure to push address accuracy past what any single source could give.</li>
+                </ul>
             </div>
-            <div class="skill-category-container">
-                <div class="skill-category">Frameworks:</div>
-                <div class="skill-items">
-                    <span>Django</span><span>Flask</span><span>FastAPI</span><span>React</span><span>Playwright</span>
-                </div>
-            </div>
-            <div class="skill-category-container">
-                <div class="skill-category">Libraries:</div>
-                <div class="skill-items">
-                    <span>NumPy</span><span>Pandas</span><span>GeoPandas</span><span>Polars</span>
-                </div>
-            </div>
-            <div class="skill-category-container">
-                <div class="skill-category">Databases:</div>
-                <div class="skill-items">
-                    <span>PostgreSQL</span><span>SQLite</span><span>MongoDB</span>
-                </div>
-            </div>
-            <div class="skill-category-container">
-                <div class="skill-category">Interests:</div>
-                <div class="skill-items">
-                    <span>Gaming</span><span>Problem solving (seriously)</span><span>Beaches</span><span>Fishing</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Easter Egg -->
-    <!-- <div class="konami-code">↑↑↓↓←→←→BA</div>
-    <div class="easter-egg">
-        <h3>You Found The Secret Developer Mode!</h3>
-        <div class="terminal-text">
-            $ whoami<br>
-            dheerajck<br>
-            $ cat secret_skills.txt<br>
-            - Lets add something here
-            - Too lazy to add now
-            - Maybe something fun<br>
-            - What about I can compile any code with pure willpower when servers are down<br>
-            - Also Has a neural network trained on fishing patterns that predicts optimal database indices GPT suggestions
-        </div>
-        <p>Btw why am I starting with btw idk anyway Actually neural network to predict fish movement or catching fish seems something lol!</p>
-        <button onclick="closeEasterEgg()">Back to Resume</button>
-    </div> -->
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Freelance Engineer</div>
+                    <div class="when">Apr 2022 – Present</div>
+                </div>
+                <div class="where">Self-employed <span>· Remote, Global</span></div>
+                <ul>
+                    <li>Wrangled <strong>10M+ row</strong> batch jobs in pure PostgreSQL — memory-efficient and <strong>1.52× faster</strong> than what came before.</li>
+                    <li>Made CI run only the tests a change can actually break — faster feedback, smaller bills.</li>
+                    <li>Built whatever the problem needed: Django REST apps, Python scrapers, resource-allocation algorithms, and a few Telegram bots people genuinely use.</li>
+                </ul>
+            </div>
 
-    <!-- Easter Egg Script -->
-    <!--
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Software Engineer</div>
+                    <div class="when">Sep 2021 – Mar 2022</div>
+                </div>
+                <div class="where">Qburst <span>· Onsite, Kerala, India</span></div>
+                <ul>
+                    <li>Built a real-time TCP client/server and a Django-WebSocket dashboard for live device monitoring.</li>
+                    <li>Wrote a document analyzer that hands you inline grammar and spelling feedback as you type.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="reveal"><span class="num">02</span> Things I built for fun (and proof)</h2>
+
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Funda Trends — Real-Estate Trend Analyzer</div>
+                </div>
+                <div class="stack">Python · BeautifulSoup · PostgreSQL</div>
+                <ul>
+                    <li>Scraped <strong>1M+ listings</strong> from funda.nl without getting blocked, then fed them into a live SaaS pipeline that turns noise into actual price-trend insight.</li>
+                </ul>
+            </div>
+
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">A web app from scratch — no framework</div>
+                </div>
+                <div class="stack">Python · WSGI · REST · PostgreSQL</div>
+                <ul>
+                    <li>Built a mailing backend on raw WSGI that holds up to <strong>500+ concurrent requests</strong> — partly to ship it, mostly to understand what the frameworks hide.</li>
+                </ul>
+            </div>
+
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Inventory Optimization Algorithm</div>
+                </div>
+                <div class="stack">Python · Cython · NumPy</div>
+                <ul>
+                    <li>A Knapsack-based tool that groups reseller orders smartly and saves them hours — then I dropped into Cython to make it <strong>6× faster</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="entry reveal">
+                <div class="entry-top">
+                    <div class="role">Multilingual Subtitle Generator</div>
+                </div>
+                <div class="stack">OpenAI Whisper · Silero VAD · EasyNMT</div>
+                <ul>
+                    <li>Subtitles in <strong>20+ languages</strong> at <strong>70% lower cost</strong>, made <strong>25% more accurate</strong> by segmenting on voice activity instead of brute-forcing the whole track.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="reveal"><span class="num">03</span> The toolkit</h2>
+            <div class="grid reveal">
+                <div class="cat">Languages</div>
+                <div class="tags"><span>Python</span><span>C</span><span>Cython</span><span>Go</span><span>JavaScript</span></div>
+                <div class="cat">Frameworks</div>
+                <div class="tags"><span>Django</span><span>Flask</span><span>FastAPI</span><span>React</span><span>Playwright</span></div>
+                <div class="cat">Data</div>
+                <div class="tags"><span>NumPy</span><span>Pandas</span><span>GeoPandas</span><span>Polars</span></div>
+                <div class="cat">Databases</div>
+                <div class="tags"><span>PostgreSQL</span><span>SQLite</span><span>MongoDB</span></div>
+                <div class="cat">Off-screen</div>
+                <div class="tags"><span>Gaming</span><span>Problem solving (seriously)</span><span>Beaches</span><span>Fishing</span></div>
+            </div>
+        </section>
+
+        <footer class="reveal">
+            Built by hand, birds included · <a href="mailto:dheerajck18@gmail.com">say hi</a>
+        </footer>
+    </main>
+
+    <!-- birds drifting across the sky -->
     <script>
-        // Konami Code Sequence
-        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        let konamiIndex = 0;
-
-        // Listen for Konami Code
-        document.addEventListener('keydown', function(e) {
-            const key = e.key;
-            const requiredKey = konamiCode[konamiIndex];
-
-            if (key.toLowerCase() === requiredKey.toLowerCase()) {
-                konamiIndex++;
-
-                if (konamiIndex === konamiCode.length) {
-                    activateEasterEgg();
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-
-        // Also activate when clicking the hint text
-        document.querySelector('.konami-code').addEventListener('click', activateEasterEgg);
-
-        function activateEasterEgg() {
-            document.querySelector('.easter-egg').style.display = 'flex';
+    (function () {
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const c = document.getElementById('sky'), x = c.getContext('2d');
+        let w, h, dpr;
+        function resize() { dpr = Math.min(devicePixelRatio || 1, 2); w = innerWidth; h = innerHeight; c.width = w * dpr; c.height = h * dpr; x.setTransform(dpr, 0, 0, dpr, 0, 0); }
+        resize(); addEventListener('resize', resize);
+        const palette = ['#1c0f24', '#2a1530', '#3a1d35', '#120a1a'];
+        function bird(sx) {
+            const d = 0.4 + Math.random() * 0.6;
+            return {
+                x: sx !== undefined ? sx : -40 - Math.random() * w,
+                y: Math.random() * h * 0.9,
+                size: 8 + d * 18, speed: (0.3 + d * 0.6) * (0.7 + Math.random() * 0.6),
+                phase: Math.random() * 6.28, flap: 0.05 + Math.random() * 0.05,
+                bob: 8 + Math.random() * 16, bobSpeed: 0.004 + Math.random() * 0.004, t: Math.random() * 1000,
+                alpha: 0.16 + d * 0.30, color: palette[(Math.random() * palette.length) | 0]
+            };
         }
-
-        function closeEasterEgg() {
-            document.querySelector('.easter-egg').style.display = 'none';
+        const N = innerWidth < 600 ? 9 : 18;
+        const birds = Array.from({ length: N }, () => bird(Math.random() * w));
+        function draw(b) {
+            const wing = Math.sin(b.phase) * 0.5 + 0.5, s = b.size, lift = (1 - wing) * s * 0.6;
+            x.save(); x.translate(b.x, b.y + Math.sin(b.t * b.bobSpeed) * b.bob); x.globalAlpha = b.alpha;
+            x.strokeStyle = b.color; x.lineWidth = Math.max(1.2, s * 0.1); x.lineCap = 'round'; x.lineJoin = 'round';
+            x.beginPath(); x.moveTo(-s, -lift); x.quadraticCurveTo(-s * 0.35, lift * 0.35, 0, 0); x.quadraticCurveTo(s * 0.35, lift * 0.35, s, -lift); x.stroke(); x.restore();
         }
+        (function tick() {
+            x.clearRect(0, 0, w, h);
+            for (const b of birds) { b.x += b.speed; b.phase += b.flap; b.t++; if (b.x - b.size > w) Object.assign(b, bird(-b.size - Math.random() * 120)); draw(b); }
+            requestAnimationFrame(tick);
+        })();
+    })();
+
+    // gentle fade-in as sections scroll into view
+    (function () {
+        const els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        els.forEach(e => io.observe(e));
+    })();
     </script>
-    -->
 </body>
 </html>
